@@ -1,0 +1,4 @@
+
+
+git rm -r --cached "해당파일경로나루트"
+git comit -m "캐시삭제완료"
