@@ -1,19 +1,17 @@
-"use strict"
-
+"use strict";
+// 모듈
 const express = require("express");
 const app = express();
 
 
-app.get("/", (req, res) => {
-    res.send("루트화면입니다.");
-});
-
-app.get("/login", (req, res) => {
-    res.send("로그인화면");
-});
+// 앱세팅 npm ejs 다운
+app.set("views", "./views");
+app.set("view engine", "ejs");
 
 
 
-app.listen(3000, () => {
-    console.log("서버 가동")
-});
+const home = require("./routes/home");
+app.use("/", home); // use ㅡ> 미들웨어를 등록해주는 메소드
+
+
+module.exports = app;
