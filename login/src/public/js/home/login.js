@@ -19,5 +19,14 @@ fetch("/login",{
     body: JSON.stringify(req),
 }) // 로그인 프론트로 보내는법
 .then((res) => res.json())
-.then((res) => {console.log(res)});
+.then((res) => {
+    if (res.success){
+        location.href = "/"
+    } else {
+        alert (res.msg);
+    };
+})
+.catch((err) => {
+    console.error("로그인중 에러 ");
+});
 };
