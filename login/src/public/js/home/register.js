@@ -14,6 +14,7 @@ function send_register(){
         name: ejs_name.value,
         pw: ejs_PW.value,
     };
+    console.log(req);
     
 
 
@@ -29,7 +30,7 @@ fetch("/register",{
 .then((res) => res.json())
 .then((res) => {
     if (res.success){
-        location.href = "/"
+        location.href = "/login"
     } else {
         alert (res.msg);
     };
