@@ -10,6 +10,9 @@ hello: (req, res) => {
 login: (req, res) => {
     res.render("home/login") // home/login 템플릿을 렌더링
 },
+register: (req, res) => {
+    res.render("home/register");
+},
 };
 
 
