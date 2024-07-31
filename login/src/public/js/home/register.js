@@ -4,11 +4,15 @@
 let ejs_ID = document.querySelector("#re_ID");
 let ejs_name = document.querySelector("#re_name");
 let ejs_PW = document.querySelector("#re_PW");
+let ejs_PW1 = document.querySelector("#re_PW1");
 let ejs_login = document.querySelector("#re_reg");
 
 ejs_login.addEventListener("click", send_register);
 
 function send_register(){
+    if (!ejs_ID.value) return alert("아이디를 입력하시오");
+    if (ejs_PW.value !== ejs_PW1) return alert("비번 안독같음");
+    
     let req = {
         id: ejs_ID.value,
         name: ejs_name.value,
